@@ -4,16 +4,30 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/main.css">
     <title>JS Mail e Dadi</title>
 </head>
 <body>
-    <h1>Email Access <span id="feedback"></span></h1>
-    <label for="mail">Your Email address</label>
-    <input 
-    type="text"
-    id="mail"
-    placeholder="mariorossi@gmail.com">
-    <button class="access">Log in</button>
+    <!-- EMAIL ACCESS -->
+    <section class="email_access">
+        <h1>Email Access <span id="feedback-email"></span></h1>
+        <label for="mail">Your Email address</label>
+        <input 
+        type="text"
+        id="mail"
+        placeholder="mariorossi@gmail.com">
+        <button class="access">Log in</button>
+    </section>
+
+    <!-- DADI -->
+    <section class="dadi">
+        <h1 id="feedback-dadi">Dadi</h1>
+        <button class="player">Roll the dice!</button>
+        <button class="continue">Continue</button>
+
+    </section>
+
+    <!-- JS SCRIPT -->
     <script src="./js/main.js"></script>
 </body>
 </html>
