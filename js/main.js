@@ -1,26 +1,23 @@
 /* TASK MAIL CHECK */
-//1. create an array with 3 mail address and store in a variable
+//1. create an array with at least 3 mail address and store in a variable
 const emailList = ['cicciopasticcio@gmail.com', 'tiziocaio@hotmail.com', 'pincopallino@gmail.com'];
-console.log(emailList);
 
 //2. add event click on button Log In
 const btnLogIn = document.querySelector('.access');
-console.log(btnLogIn);
 btnLogIn.addEventListener('click', function() {
     //3. select in html user input of mail address
     const userEmailInput = document.getElementById('mail');
     const userEmail = userEmailInput.value.trim().toLowerCase();
-    console.log(userEmail);
 
-    //4. compare with the list
-    if (userEmail === '') {
+    if (userEmail === '') { //alert for <empty string>
         alert('Error. Plase type a valid address')
     }
-    //5. if user input is an array's element do access, else don't.
-    else {
+    //4. compare user input with the list
+    else { 
         let userFound = false;
         const feedback = document.getElementById('feedback');
         for(let i = 0; i < emailList.length; i++) {
+            //5. if user input is an array's element do access, else don't.
             if (userEmail === emailList[i]) {
                 userFound = true;
                 break;
