@@ -35,10 +35,40 @@ btnLogIn.addEventListener('click', function() {
 
 
 /* TASK DADI */
-//1. spawn 2 random numbers for the player (with a button)
-//1.1. get their sum: player result
-//2. spawn 2 random numbers for the computer
-//2.2. get their sum: computer result
-//3. compare the player result and the computer result
-//4. if player result > computer result print out "You are the winner!"
-//5. else print out "Try again! You'll be luckier!"
+//1. add event click on button Roll the dice!
+const btnRollTheDice = document.querySelector('.roll-the-dice');
+btnRollTheDice.addEventListener('click', function() {
+    const feedbackResult = document.getElementById('feedback-dadi');
+    //2.1. spawn 2 random numbers for the player (with a button)
+    const numPlayer1 = Math.floor( (Math.random() * 6) + 1);
+    const numPlayer2 = Math.floor( (Math.random() * 6) + 1);
+    const playerDice = document.querySelector('.player-dice');
+    playerDice.classList.add('d-inline-block');
+    playerDice.innerHTML = ` ${numPlayer1} and ${numPlayer2}`;
+
+    //3.1. spawn 2 random numbers for the computer
+    const numComputer1 = Math.floor( (Math.random() * 6) + 1);
+    const numComputer2 = Math.floor( (Math.random() * 6) + 1);
+    const computerDice = document.querySelector('.computer-dice');
+    computerDice.classList.add('d-inline-block');
+    computerDice.innerHTML = ` ${numComputer1} and ${numComputer2}`;
+
+    //2.2. get the sum: player result
+    let playerResult = numPlayer1 + numPlayer2;
+    //3.2. get the sum: computer result
+    let computerResult = numComputer1 + numComputer2;
+    const score = `Your score: ${playerResult}. Computer score: ${computerResult}.`;
+    
+    //4. compare the player result and the computer result
+    //   if player result > computer result print out "You are the winner!"
+    //   else print out "Try again! You'll be luckier!"
+    if (playerResult > computerResult) {
+        feedbackResult.innerHTML = `${score} Congratulations! You are the winner!`;
+    }
+    else if (playerResult < computerResult) {
+        feedbackResult.innerHTML = `${score} Oh no! Computer wins! Try again! You'll be luckier!`;
+    }    
+    else {
+        feedbackResult.innerHTML = `${score} Same score! Try again!`;
+    }  
+})

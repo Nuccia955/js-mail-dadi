@@ -1,3 +1,4 @@
+/* GENERAL STYLES */
 * {
     margin: 0;
     padding: 0;
@@ -6,8 +7,58 @@
 
 body {
     font-family: sans-serif;
+    text-align: center;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #33415c;
+    color: white
 }
 
-button.continue {
+section {
+    margin-bottom: 100px;
+}
+
+h1 {
+    margin: 20px;
+    color: #6f75e7;
+    text-shadow: 1px 1px 2px #353de6;
+}
+
+label {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+button {
+    border: none;
+    border-radius: 15px;
+    background-color: #8BC6EC;
+    background-image: linear-gradient(135deg, #8BC6EC 0%, #9599E2 100%);
+    padding: 5px 20px;
+}
+
+button:hover {
+    outline: 2px solid white;
+}
+
+button:active {
+    color: #12187b ;
+    outline-color: currentColor;
+}
+
+section.dicegame button {
+    margin-bottom: 20px;
+}
+
+
+/* UTILITIES FOR JS */
+h3 > span {
     display: none;
 }
+
+.d-inline-block {
+    display: inline-block;
+}
+
